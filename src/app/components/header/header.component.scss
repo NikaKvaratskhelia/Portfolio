@@ -1,0 +1,165 @@
+@import "variables";
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: calc((100vw - 1315px)/2);
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  z-index: 9;
+  user-select: none;
+  color: $--text;
+  font-family: "Work Sans Black";
+  background-color: white;
+
+  a {
+    cursor: pointer;
+    font-size: 1rem;
+    color: $--text;
+    transition: color 0.3s, background 0.3s;
+  }
+
+  ul li:not(:last-child) {
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .name {
+    animation: slideInLeft 1s;
+  }
+
+  ul {
+    animation: slideInRight 1s;
+  }
+
+  .name,
+  ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .name .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $--primary;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  ul li:last-child a {
+    background-color: $--primary;
+    color: white;
+    padding: 12px;
+    border-radius: 3px;
+  }
+
+  li:last-child {
+    transition: all 0.5s;
+
+    &:hover {
+      transform: translate(3px, -3px);
+    }
+  }
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  width: 30px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+  transition: all 0.5s;
+
+  span {
+    background-color: $--primary;
+    border-radius: 5px;
+    width: 30px;
+    height: 5px;
+    transition: all 0.5s;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -220px;
+    width: 220px;
+    bottom: 0;
+    background-color: white;
+    padding: 20px;
+    border-left: 2px dashed black;
+    transition: right 0.5s ease;
+
+    ul {
+      flex-direction: column;
+      margin-top: 70px;
+    }
+
+    &.active {
+      right: 0;
+      & + .burger-menu {
+        span {
+          &:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+}

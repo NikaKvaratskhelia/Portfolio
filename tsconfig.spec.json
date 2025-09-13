@@ -13,3 +13,5 @@
     "src/**/*.d.ts"
   ]
 }
+
+// <img [src]="'https://image.thum.io/get/width/600/crop/600/' + 'https://google.com'" width="300" />

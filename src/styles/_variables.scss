@@ -1,0 +1,37 @@
+$--bg-dark: hsl(192, 38%, 89%);
+$--bg: hsl(192, 71%, 94%);
+$--bg-light: hsl(192, 100%, 99%);
+$--text: hsl(195, 100%, 3%);
+$--text-muted: hsl(192, 31%, 26%);
+$--highlight: hsl(192, 100%, 98%);
+$--border: hsl(192, 17%, 48%);
+$--border-muted: hsl(192, 21%, 60%);
+$--primary: hsl(189, 100%, 12%);
+$--secondary: hsl(12, 57%, 29%);
+$--danger: hsl(9, 21%, 41%);
+$--warning: hsl(52, 23%, 34%);
+$--success: hsl(147, 19%, 36%);
+$--info: hsl(217, 22%, 41%);
+
+@media (prefers-color-scheme: dark) {
+  $--bg-dark: hsl(198, 100%, 1%);
+  $--bg: hsl(194, 73%, 4%);
+  $--bg-light: hsl(192, 44%, 8%);
+  $--text: hsl(192, 100%, 92%);
+  $--text-muted: hsl(192, 26%, 67%);
+  $--highlight: hsl(192, 22%, 36%);
+  $--border: hsl(192, 31%, 26%);
+  $--border-muted: hsl(191, 52%, 15%);
+  $--primary: hsl(191, 62%, 60%);
+  $--secondary: hsl(12, 69%, 72%);
+  $--danger: hsl(9, 26%, 64%);
+  $--warning: hsl(52, 19%, 57%);
+  $--success: hsl(146, 17%, 59%);
+  $--info: hsl(217, 28%, 65%);
+}
+
+@font-face { 
+  font-family: 'Work Sans Black';
+  src: url("../assets/fonts/Work_Sans/static/WorkSans-Regular.ttf");
+}
+

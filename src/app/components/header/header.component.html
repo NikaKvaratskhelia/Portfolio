@@ -1,0 +1,21 @@
+<header>
+    <div class="name">
+        <span class="circle">N</span>
+        <h2>Nika</h2>
+    </div>
+    <nav [ngClass]="{active:menuOpen}">
+        <ul>
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a href="#aboutMe" >About Me</a></li>
+            <li><a href="#skills" >Skills & Expertise</a></li>
+            <li><a routerLink="portfolio" routerLinkActive="active">Portfolio</a></li>
+            <li><a href="#workProccess" >Work Proccess</a></li>
+            <li><a href="#contact" >Contact Me</a></li>
+        </ul>
+    </nav>
+    <div class="burger-menu" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
