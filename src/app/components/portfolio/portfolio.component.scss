@@ -14,6 +14,13 @@
     opacity: 1;
   }
 }
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+}
 
 * {
   font-family: "work sans black";
@@ -198,4 +205,27 @@
       fill: $--primary;
     }
   }
+}
+
+.loader-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: $--bg-dark;
+
+  &.active{
+    display: flex;
+  }
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid $--primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }

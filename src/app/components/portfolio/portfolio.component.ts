@@ -12,19 +12,25 @@ export class PortfolioComponent {
   public projects: any;
   public wantedProjects: any;
   public chosenCategory: string = 'all';
+  public isLoading: boolean = false;
 
   constructor(private http: HttpClient) {
+    this.isLoading = true;
     this.getProjects();
   }
 
   getProjects() {
+    console.log(this.isLoading);
+
     this.http
       .get('https://my-json-server.typicode.com/NikaKvaratskhelia/DataBase/db')
       .subscribe({
         next: (data: any) => {
           this.projects = data;
           this.wantedProjects = data.projects;
+            this.isLoading = false;
           console.log(this.projects);
+          console.log(this.isLoading);
         },
         error: (err) => {
           console.log(err);

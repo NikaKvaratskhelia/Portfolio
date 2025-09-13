@@ -14,48 +14,52 @@
 }
 
 @keyframes slideUp {
-    from{
-        transform: translateY(200px);
-        opacity: 0;
-    }to{
-        transform: translateY(0px);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
-    from{
-        transform: translateX(-200px);
-        opacity: 0;
-    }to{
-        transform: translateX(0px);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes slideDown {
-    from{
-        transform: translateY(-200px);
-        opacity: 0;
-    }to{
-        transform: translateY(0px);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInRight {
-    from{
-        transform: translateX(200px);
-        opacity: 0;
-    }to{
-        transform: translateX(0px);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 * {
   font-family: "work sans black";
-} 
+}
 
 .aboutMe {
   background: linear-gradient(120deg, $--bg-light, $--success, $--bg, $--info);
@@ -65,10 +69,11 @@
 
   .wrapper {
     max-width: 1300px;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 80px;
 
     .info {
@@ -117,15 +122,15 @@
           padding: 20px 36px;
           border-radius: 5px;
 
-          &:first-child{
+          &:first-child {
             animation: slideUp 1.1s;
           }
 
-          &:nth-child(2){
+          &:nth-child(2) {
             animation: slideUp 1.3s;
           }
 
-          &:nth-child(3){
+          &:nth-child(3) {
             animation: slideUp 1.5s;
           }
 
@@ -138,9 +143,156 @@
 
     img {
       max-width: 500px;
+      width: 90%;
       aspect-ratio: 3/4;
       animation: slideInRight 1s;
     }
   }
 }
 
+.workProccess {
+  padding: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: $--bg-light;
+  .text {
+    max-width: 500px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    p {
+      font-size: 1.25rem;
+      color: $--text-muted;
+    }
+  }
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .left-icons,
+    .right-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .card {
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 32px 32px 124px #2b384c1a;
+        display: inline-flex;
+        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        .logo {
+          border-radius: 6px;
+          background: $--primary;
+          display: flex;
+          padding: 20px;
+          align-items: flex-start;
+          gap: 10px;
+          width: fit-content;
+        }
+
+        .what {
+          color: #132238;
+          font-family: Work Sans black;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+        }
+
+        .what-doing {
+          color: #556070;
+          font-family: Work Sans black;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+          max-width: 248px;
+        }
+
+        .logo2 {
+          background: rgba($--primary, 0.25);
+          display: flex;
+          padding: 20px;
+          align-items: flex-start;
+          gap: 10px;
+          border-radius: 6px;
+
+          path {
+            fill: $--primary;
+          }
+        }
+      }
+    }
+
+    .left-icons {
+      position: relative;
+      top: 20px;
+      animation: slideUp forwards 1s;
+    }
+
+    .right-icons {
+      position: relative;
+      top: -20px;
+      animation: slideDown forwards 1s;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .aboutMe .wrapper .info {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .details div {
+      padding: 10px;
+      h4 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+      }
+    }
+  }
+
+  .workProccess {
+    .text {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:650px){
+  .workProccess{
+    .icons{
+      justify-content: center;
+      gap: 20px;
+
+      .left-icons, .right-icons{
+        top: 0;
+      }
+    }
+  }
+}
