@@ -1,0 +1,158 @@
+@import "variables";
+
+@keyframes slideUp {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.workProccess {
+  padding: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: $--bg-light;
+  .text {
+    max-width: 500px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: 1s slideInLeft forwards;
+
+    p {
+      font-size: 1.25rem;
+      color: $--text-muted;
+    }
+  }
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .left-icons,
+    .right-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      user-select: none;
+
+      .card {
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 32px 32px 124px #2b384c1a;
+        display: inline-flex;
+        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        .logo {
+          border-radius: 6px;
+          background: $--primary;
+          display: flex;
+          padding: 20px;
+          align-items: flex-start;
+          gap: 10px;
+          width: fit-content;
+        }
+
+        .what {
+          color: #132238;
+          font-family: Work Sans black;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+        }
+
+        .what-doing {
+          color: #556070;
+          font-family: Work Sans black;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+          max-width: 248px;
+        }
+
+        .logo2 {
+          background: rgba($--primary, 0.25);
+          display: flex;
+          padding: 20px;
+          align-items: flex-start;
+          gap: 10px;
+          border-radius: 6px;
+
+          path {
+            fill: $--primary;
+          }
+        }
+      }
+    }
+
+    .left-icons {
+      position: relative;
+      top: 20px;
+      animation: slideUp forwards 1s;
+    }
+
+    .right-icons {
+      position: relative;
+      top: -20px;
+      animation: slideDown forwards 1s;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .workProccess {
+    .icons {
+      justify-content: center;
+      gap: 20px;
+
+      .left-icons,
+      .right-icons {
+        top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .workProccess {
+    .text {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

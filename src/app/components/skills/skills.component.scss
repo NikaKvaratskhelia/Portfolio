@@ -1,0 +1,128 @@
+@import "variables";
+
+@keyframes scrollAnimation {
+  from {
+    right: 100%;
+  }
+  to {
+    right: -250px;
+  }
+}
+
+@keyframes scrollAnimation2 {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -250px;
+  }
+}
+
+.skillsWrapper {
+  background-color: $--bg-dark;
+  padding: 100px 0px;
+
+  h1 {
+    padding: 10px;
+    text-align: center;
+    color: $--primary;
+    user-select: none;
+  }
+
+  .skills {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    overflow-x: hidden;
+    background-color: $--bg-dark;
+
+    .skill {
+      padding: 10px;
+      min-height: 100px;
+      position: absolute;
+      top: calc((100% - 100px) / 2);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 200px;
+      width: 100%;
+      margin: 0 auto;
+      transition: all 0.5s;
+      user-select: none;
+      border-radius: 5px;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      svg {
+        width: 50px;
+      }
+
+      h4 {
+        color: $--text-muted;
+        font-size: 1.5rem;
+      }
+    }
+
+    &.skills1 {
+      .skill {
+        right: 100%;
+        animation: scrollAnimation 30s infinite linear;
+      }
+      .skill1 {
+        animation-delay: calc(30s / 5 * (5 - 1) * -1);
+      }
+
+      .skill2 {
+        animation-delay: calc(30s / 5 * (5 - 2) * -1);
+      }
+
+      .skill3 {
+        animation-delay: calc(30s / 5 * (5 - 3) * -1);
+      }
+
+      .skill4 {
+        animation-delay: calc(30s / 5 * (5 - 4) * -1);
+      }
+
+      .skill5 {
+        animation-delay: calc(30s / 5 * (5 - 5) * -1);
+      }
+    }
+
+    &.skills2 {
+      .skill {
+        left: 100%;
+        animation: scrollAnimation2 30s infinite linear;
+      }
+      .skill1 {
+        animation-delay: calc(30s / 4 * (4 - 1) * -1);
+      }
+
+      .skill2 {
+        animation-delay: calc(30s / 4 * (4 - 2) * -1);
+      }
+
+      .skill3 {
+        animation-delay: calc(30s / 4 * (4 - 3) * -1);
+      }
+
+      .skill4 {
+        animation-delay: calc(30s / 4 * (4 - 4) * -1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .skillsWrapper .skills .skill:hover {
+    transform: unset;
+    box-shadow: unset;
+  }
+}
