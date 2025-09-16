@@ -52,6 +52,7 @@
         color: $--text;
         font-weight: 600;
         overflow-wrap: anywhere;
+        user-select: text;
       }
 
       .icon {
@@ -101,6 +102,7 @@
 
         &:hover {
           background-color: $--primary;
+          transform: translateY(-3px);
 
           svg {
             fill: white;
