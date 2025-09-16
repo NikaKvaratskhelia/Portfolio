@@ -17,9 +17,13 @@ export class ContactComponent {
     subject: new FormControl(),
     message: new FormControl(),
   });
+  public emailSent: boolean = false;
+  public sendingError: boolean = false;
+  public isSending: boolean = false;
 
   sendEmail() {
     console.log(this.form.value);
+    this.isSending = true;
     emailjs
       .send(
         'service_t2xrmjh',
@@ -36,11 +40,19 @@ export class ContactComponent {
       )
       .then(
         (result: EmailJSResponseStatus) => {
-          alert('Message sent!');
+          console.log(result);
+          this.emailSent = true;
         },
         (error) => {
-          alert('Failed to send message: ' + JSON.stringify(error));
+          console.log(error);
+          this.sendingError = true;
         }
       );
+
+    setTimeout(() => {
+      this.emailSent = false;
+      this.sendingError = false;
+      this.isSending = false;
+    }, 4000);
   }
 }

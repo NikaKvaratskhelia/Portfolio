@@ -62,7 +62,7 @@
 }
 
 .aboutMe {
-  background: linear-gradient(120deg, $--bg-light, $--success, $--bg, $--info);
+  background: linear-gradient(120deg, $--bg-light, rgba($--success, 0.5), $--bg, $--info);
   background-size: 400% 400%;
   animation: bg-animation 30s ease infinite;
   padding: 100px 0px;

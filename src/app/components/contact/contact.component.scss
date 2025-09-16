@@ -172,3 +172,29 @@
     }
   }
 }
+
+@keyframes popUp{
+  to{
+    left: 30px;
+  }
+}
+
+.popUp{
+  position: fixed;
+  z-index: 999;
+  top: 100px;
+  left: -260px;
+  width: 230px;
+  animation: popUp 1s linear forwards;
+  padding: 10px;
+  border-radius: 5px;
+  color: $--highlight;
+
+  &.success{
+    background-color: rgb(60, 95, 60);
+  }
+
+  &.error{
+    background-color: rgb(110, 45, 45);
+  }
+}
