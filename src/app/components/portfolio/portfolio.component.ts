@@ -15,11 +15,12 @@ export class PortfolioComponent {
   public isLoading: boolean = false;
 
   constructor(private http: HttpClient) {
-    this.isLoading = true;
     this.getProjects();
   }
 
   getProjects() {
+    console.log(this.isLoading);
+    this.isLoading = true;
     console.log(this.isLoading);
 
     this.http
@@ -28,12 +29,13 @@ export class PortfolioComponent {
         next: (data: any) => {
           this.projects = data;
           this.wantedProjects = data.projects;
-            this.isLoading = false;
           console.log(this.projects);
+          this.isLoading = false;
           console.log(this.isLoading);
         },
         error: (err) => {
           console.log(err);
+          this.isLoading = false;
         },
       });
   }
