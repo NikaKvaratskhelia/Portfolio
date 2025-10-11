@@ -43,6 +43,7 @@
       max-width: 400px;
       gap: 10px;
       transition: all 0.5s;
+      cursor: pointer;
 
       .infoName {
         color: $--text-muted;

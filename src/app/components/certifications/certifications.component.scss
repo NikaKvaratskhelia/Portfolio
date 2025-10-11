@@ -1,0 +1,69 @@
+@import '_variables';
+
+.cert-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-family: 'work sans black';
+}
+
+.cert-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cert-item {
+  background: #fff;
+  max-width: 500px;
+  border: 1px solid $--bg-dark;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  .cert-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .cert-info {
+    padding: 1rem;
+
+    .cert-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1a1a1a;
+    }
+
+    .cert-issuer {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .cert-date {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .cert-img {
+    height: 150px;
+  }
+}
